@@ -1,0 +1,189 @@
+.main {}
+
+
+h1 {
+   text-transform: uppercase;
+   font-weight: 900;
+   text-align: center;
+   color: crimson;
+   font-size: larger;
+   margin: 20px
+}
+
+// .grid {
+
+//    // .grid__body
+
+//    &__body {
+//       display: grid;
+//       gap: 20px;
+//       grid-template: 200px 200px / 150px minmax(150px, 1fr) 150px;
+
+//       grid-template-columns: 1fr 2fr 1fr;
+//       grid-template-columns: 33.333% 33.333% 33.333%;
+//       grid-row: 2fr 1fr;
+
+//       grid-template-columns: auto 1fr 1fr;
+//       grid-row: 1fr 1fr;
+
+//       grid-template-columns: fit-content(300px) 1fr auto;
+//       grid-template-rows: 1fr 1fr;
+
+//       grid-template-columns: repeat(3 , 1fr);
+//       grid-template-rows: repeat(1 1fr);
+
+
+//       grid-template: repeat(2, 1fr) / minmax(50px, 1fr) minmax(50px, 1fr) minmax(50px, 1fr);
+
+//       grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+//       grid-auto-rows: 200px; // если есть есть какой то неявный ряд то его можно изменить этим свойсвом
+
+//       grid-auto-columns: 500px;
+//       grid-auto-rows: 200px ; // можно изать когда вообще не задаена явная сетка на репите
+
+//       grid-auto-flow: dense; // row // column
+//    }
+
+
+//    // .grid__item
+
+//    &__item {
+//       text-align: center;
+//       border: 2px solid #333;
+//       padding: 30px;
+//       margin: 0px 0px 20px 0px;
+//    }
+// }
+
+// .grid {
+
+//    // .grid__wrapper
+
+//    &__wrapper {
+//       display: grid;
+// grid-template-columns: 150px 1fr;
+// grid-template-rows: 100px 1fr;
+// grid-template-areas:
+// "__header __header"
+//                          // areas
+// "__side __content";
+
+//       grid-template: [start] "__header __header" 100px [row2] "__side __content" 1fr [row-end] / 150px 1fr;
+
+//    }
+
+//    // .grid__header
+
+//    &__header {
+//       grid-area: __header;
+//    }
+
+//    // .grid__side
+
+//    &__side {
+//       grid-area: __side;
+//    }
+
+//    // .grid__content
+
+//    &__content {
+//       grid-area: __content;
+//    }
+// }
+
+// .item {
+//    border: 1px solid #333;
+//    padding: 40px;
+//    text-align: center;
+//    margin: 0px 0px 30px 0px;
+// }
+
+// ----------------------------------loyout 2
+
+
+.maker {}
+
+.container {}
+
+.grid {
+
+   // .grid__body
+
+   &__body {
+      display: grid;
+      // gap: 20px;
+      // row-gap: 40px;
+      // column-gap: 40px;
+
+      // grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+      grid-template-rows: [start] 150px [row2] 150px [row-end];
+      grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+
+      // justify-items: center;
+      // align-items: end;
+   }
+
+   // .grid__item
+
+   &__item {
+      text-align: center;
+      border: 2px solid #333;
+      padding: 30px;
+      // margin: 30px;  // Процентные значения pp mm лучше не задовать потому что браузеры в ахуе и по пьяному их вычисляют
+   }
+
+   .item-1 {
+      // grid-row-start: 2;               // работает это так: например с первой до второй для row, с 3третий до 4той.для column
+      // grid-column-start: 2;
+      // grid-row-end: 4;
+      // grid-column-end:4;
+
+      // grid-row-start: 2;
+      // grid-column-start: 3;
+
+
+      // grid-row-start: span 1;
+      // grid-column-start: span 2;
+
+      // grid-row-start: 1;
+      // grid-column-start: span 3;
+
+      grid-row: 2;
+      grid-column: 2 / 3; // Удобная темка !
+      // grid-column: col2;
+
+      order: 1;
+
+      background-color: #bfbfbf;
+   }
+
+   .item-2 {
+      order: 2;
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+   }
+
+   .item-3 {
+      order: 3;
+      // justify-self: end;
+      // align-self: end;   // Для переназначения к каждому элементу
+   }
+
+   .item-4 {
+      order: 4;
+      // margin: auto;  // Для расредения четко по центру
+   }
+
+   .item-5 {
+      order: 5;
+      // justify-self: start;
+      // align-self: start; // Для переназначения к каждому элементу
+   }
+
+   .item-6 {
+      order: 6;
+      // justify-self: stretch;
+      // align-self: stretch // Для переназначения к каждому элементу
+   }
+
+}
